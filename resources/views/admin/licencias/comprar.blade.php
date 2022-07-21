@@ -1,5 +1,13 @@
 @extends('layouts.masivo-general')
 
+@section('leyenda')
+    ¡Adquiere tu licencia!
+@endsection
+
+@section('leyenda_desc')
+Los beneficios que contiene el software te llevará un nivel arriba de las demás empresas.
+@endsection
+
 @section('section')
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -85,7 +93,7 @@
                     <label for="total" class="text-dark">Total</label>
                 </div>
                 <!-- Submit Button-->
-                <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
+                <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Siguiente</button></div>
             </form>
         </div>
     </div>

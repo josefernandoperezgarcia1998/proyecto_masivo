@@ -54,3 +54,7 @@ Route::get('salir', [App\Http\Controllers\AutenticarController::class, 'salida']
 // Ruta para la interfaz de comprar
 Route::get('comprar-licencia', [App\Http\Controllers\LicenciaController::class, 'comprar'])->name('licencias.comprar');
 Route::post('comprar-licencia-store', [App\Http\Controllers\LicenciaController::class, 'storePublic'])->name('licencias.storePublic');
+Route::get('comprar-licencia-datos/{datosLicencia}', [App\Http\Controllers\LicenciaController::class, 'vistaComprarDescargarPdf'])->name('licencias.vistaComprarDescargarPdf');
+
+/* Ruta para descargar una cita en pdf respecto al id que se seleccione en el index */
+Route::get('exportarCitapdf/{id}',[App\Http\Controllers\LicenciaController::class, 'exportarverCitaPdfPdf'])->name('licencias.cita.pdf-download');

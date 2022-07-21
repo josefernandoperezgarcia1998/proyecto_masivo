@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Licencia;
 use Illuminate\Http\Request;
+use PDF;
 
 class LicenciaController extends Controller
 {
@@ -149,8 +150,26 @@ class LicenciaController extends Controller
         // Asignando el folio generado a la columna del modelo
         $valores['folio'] = $folio;
 
-        Licencia::create($valores);
+        $datos = Licencia::create($valores);
 
-        return redirect()->route('licencias.index')->with('success', 'Registro creado correctamente');
+        $datosLicencia = Licencia::findOrFail($datos->id);
+
+        return redirect()->route('licencias.vistaComprarDescargarPdf', $datosLicencia)->with('success', 'Registro creado correctamente');
     }
+
+    public function vistaComprarDescargarPdf(Licencia $datosLicencia)
+    {
+        return view('admin.licencias.comprar-descargar-pdf', compact('datosLicencia'));
+    }
+
+    public function exportarverCitaPdfPdf($id)
+    {
+        $licencia_data = Licencia::where('id',$id)
+                            ->select('licencias.*')
+                            ->get();
+                            
+        $pdf = PDF::loadView('pdf.licencia', compact('licencia_data'));
+        return $pdf->download("Licencia.pdf");
+    }
+
 }
