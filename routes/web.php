@@ -50,3 +50,7 @@ Route::resource('users', App\Http\Controllers\UsuarioController::class)->names('
 Route::get('iniciar-sesion', [App\Http\Controllers\AutenticarController::class, 'credenciales'])->name('login');
 Route::post('validar', [App\Http\Controllers\AutenticarController::class, 'autenticar'])->name('validar');
 Route::get('salir', [App\Http\Controllers\AutenticarController::class, 'salida'])->name('salir');
+
+// Ruta para la interfaz de comprar
+Route::get('comprar-licencia', [App\Http\Controllers\LicenciaController::class, 'comprar'])->name('licencias.comprar');
+Route::post('comprar-licencia-store', [App\Http\Controllers\LicenciaController::class, 'storePublic'])->name('licencias.storePublic');

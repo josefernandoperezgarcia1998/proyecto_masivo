@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
             <label for="licencia" class="form-label">Licencia</label>
-            <select class="form-select w-50" name="licencia" id="licencia">
+            <select class="form-select" name="licencia" id="licencia">
                 <option value="" selected>Selecciona una licencia</option>
                 <option {{ old('licencia') == 'Básica' ? 'selected' : '' }} value="Básica">Básica</option>
                 <option {{ old('licencia') == 'Premium' ? 'selected' : '' }} value="Premium">Premium</option>

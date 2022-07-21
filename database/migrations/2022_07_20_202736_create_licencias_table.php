@@ -24,7 +24,7 @@ class CreateLicenciasTable extends Migration
             $table->string('subtotal');
             $table->string('iva');
             $table->string('total');
-            $table->enum('estado', ['Pagado', 'No pagado']);
+            $table->enum('estado', ['Pagado', 'No pagado'])->default('No pagado');
             $table->timestamps();
         });
     }

@@ -105,4 +105,52 @@ class LicenciaController extends Controller
             return redirect()->route('licencias.index')->with('error',$e->getMessage());
         }
     }
+
+    public function comprar()
+    {
+        return view('admin.licencias.comprar');
+    }
+    public function storePublic(Request $request)
+    {
+
+        $validated = $request->validate([
+            'nombre' => 'required',
+            'correo'       => 'required',
+            'telefono'   => 'required',
+            'licencia'   => 'required',
+            'cantidad'  => 'required',
+        ]);
+
+        // Obteniendo el puro nombre
+        $name = $request->nombre;
+
+        // Obteniendo la fecha sin ":"
+        $hora = date("h:i:s");
+        $doubleDot = ":";
+        $replaceDot = "";
+        $time = str_replace($doubleDot, $replaceDot, $hora);
+
+        // Obteniendo la fecha
+        $hoy = date("Ymd");
+
+        // Obteniendo las primeras letras
+        $nombre = '';
+        $explode = explode(' ',$name);
+        foreach($explode as $x){
+            $nombre .=  $x[0];
+        }
+
+        // Estructurando el folio
+        $folio = $nombre ."-" . $time ."-". $hoy;
+
+        // Obteniendo todos los valores del request
+        $valores = $request->all();
+
+        // Asignando el folio generado a la columna del modelo
+        $valores['folio'] = $folio;
+
+        Licencia::create($valores);
+
+        return redirect()->route('licencias.index')->with('success', 'Registro creado correctamente');
+    }
 }

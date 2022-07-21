@@ -172,6 +172,7 @@
                     <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
                     <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#plans">Planes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('licencias.comprar')}}">Comprar</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('welcome-policy')}}">Política</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('blog.index')}}">Blog</a></li>
