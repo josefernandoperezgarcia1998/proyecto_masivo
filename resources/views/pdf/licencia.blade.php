@@ -117,6 +117,9 @@
             <table class="bordesFuera">
                 @foreach ($licencia_data as $licencia)
                 <tr>
+                    <th><strong class="green-letter">Folio: </strong> {{$licencia->folio}}.</th>
+                </tr>
+                <tr>
                     <th><strong class="green-letter">Nombre: </strong> {{$licencia->nombre}}.</th>
                 </tr>
                 <tr>
@@ -143,6 +146,24 @@
             </table>
             @endforeach
 
+            <h4 class="">DATOS BANCARIOS</h4>
+            <table>
+                <tr>
+                    <th><strong class="green-letter">NOMBRE: </strong>AMBAR ROJO STUDIOS SA DE CV</th>
+                </tr>
+                <tr>
+                    <th><strong class="green-letter">BANCO: </strong>Banorte</th>
+                </tr>
+                <tr>
+                    <th><strong class="green-letter">No. CUENTA: </strong>1055526387</th>
+                </tr>
+                <tr>
+                    <th><strong class="green-letter">CLABE: </strong> 072 100 01055526387 0</th>
+                </tr>
+            </table>
+            <div style="text-align: center">
+                <p><strong>Una vez realizado tu pago envía el comprobante de pago con tu FOLIO y adjuntando los datos de adquisición al siguiente correo electrónico "ventas@masivoxml.com".</strong></p>
+            </div>
             <br>
             <div>
                 <div class=""><strong class="purple-letter">MASVIO XML</strong>-<strong class="green-letter"> - DESCARGAS MASIVAS</strong></div>

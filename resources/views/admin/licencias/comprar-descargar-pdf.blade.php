@@ -85,7 +85,7 @@ Desliza hacia abajo para descargar el PDF y hacer el pago de tu licencia.
                 </div>
                 <!-- Total input-->
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="total" type="text" placeholder="1" autocomplete="off" readonly name="iva" value="{{ old('iva', $datosLicencia->iva) }}">
+                    <input class="form-control" id="total" type="text" placeholder="1" autocomplete="off" readonly name="total" value="{{ old('total', $datosLicencia->total) }}">
                     <label for="total" class="text-dark">Total</label>
                 </div>
                 <!-- Submit Button-->
